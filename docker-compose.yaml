@@ -1,0 +1,42 @@
+version: '3.4'
+volumes:
+  es-data:
+
+services:
+  kibana:
+    image: docker.elastic.co/kibana/kibana:8.0.0
+    ports:
+      - 5601:5601
+    depends_on: 
+      - elasticsearch
+    environment:
+      ELASTICSEARCH_HOSTS: 'http://elasticsearch:9200'
+    restart: always
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:8.0.0
+    volumes: 
+      - es-data:/usr/share/elasticsearch/data
+    ports:
+      - 127.0.0.1:9200:9200
+    environment:
+      - "ES_JAVA_OPTS=-Xms2g -Xmx2g"
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    restart: always
+
+  logstash:
+    build: ./docker/logstash
+    depends_on: 
+      - elasticsearch
+    restart: always
+
+  worker:
+    build: ./docker/worker
+    env_file:
+      - .env
+    restart: always

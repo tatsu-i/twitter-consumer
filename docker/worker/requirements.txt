@@ -1,0 +1,6 @@
+tweepy
+beautifulsoup4==4.8.1
+schedule
+requests
+elasticsearch
+elasticsearch-dsl
