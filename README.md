@@ -23,4 +23,8 @@ docker-compose exec chatbot python /app/ingest.py -u 'user1,user2,user3'
 ```
 docker-compose exec chatbot python /app/chat.py
 You: ChatGPTの活用方法について
+AI:
+ChatGPTは、ユーザーの要望を直接ChatGPTに投げて結果を返すことができる。
+また、企業が宿題系のコーディング試験を出す場合、Chatbot対策が必要になるかもしれない。
+ChatGPTをAPIとして利用することもできる。ChatGPTをアドバイザーとして利用することもできる。
 ```
