@@ -1,5 +1,12 @@
 # Twitter consumer
 
+## 環境変数の設定
+テンプレートをコピーし必要なAPIキーを入力します。
+```
+$ cp env.template .env
+$ vim .env
+```
+
 ## Logstashの設定ファイル生成
 
 ```bash
