@@ -1,0 +1,110 @@
+{
+  "version": "8.0.0",
+  "objects": [
+    {
+      "id": "0d002710-bfd0-11ed-829d-f3ea157bcc91",
+      "type": "dashboard",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-03-11T05:53:53.987Z",
+      "version": "WzI3MDUsMl0=",
+      "attributes": {
+        "title": "Twitter",
+        "hits": 0,
+        "description": "",
+        "panelsJSON": "[{\"version\":\"8.0.0\",\"type\":\"visualization\",\"gridData\":{\"x\":0,\"y\":0,\"w\":24,\"h\":15,\"i\":\"6fde6ec2-0bd5-4a59-96e0-3b3e3c4095be\"},\"panelIndex\":\"6fde6ec2-0bd5-4a59-96e0-3b3e3c4095be\",\"embeddableConfig\":{\"savedVis\":{\"id\":\"\",\"title\":\"URL Ranking\",\"description\":\"\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMetricsAtAllLevels\":false,\"showTotal\":false,\"showToolbar\":false,\"totalFunc\":\"sum\",\"percentageCol\":\"\",\"autoFitRowToContent\":false},\"uiState\":{},\"data\":{\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"params\":{},\"schema\":\"metric\"},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"params\":{\"field\":\"urls.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":50,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"customLabel\":\"URL\"},\"schema\":\"bucket\"}],\"searchSource\":{\"index\":\"3291b9e0-bfcf-11ed-829d-f3ea157bcc91\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}}},\"enhancements\":{}}},{\"version\":\"8.0.0\",\"type\":\"visualization\",\"gridData\":{\"x\":24,\"y\":0,\"w\":24,\"h\":15,\"i\":\"ce02a1f2-732b-426f-bda8-cd8a0239047c\"},\"panelIndex\":\"ce02a1f2-732b-426f-bda8-cd8a0239047c\",\"embeddableConfig\":{\"savedVis\":{\"id\":\"\",\"title\":\"ハッシュタグ\",\"description\":\"\",\"type\":\"tagcloud\",\"params\":{\"scale\":\"linear\",\"orientation\":\"single\",\"minFontSize\":18,\"maxFontSize\":72,\"showLabel\":true,\"palette\":{\"name\":\"default\",\"type\":\"palette\"}},\"uiState\":{},\"data\":{\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"params\":{},\"schema\":\"metric\"},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"params\":{\"field\":\"hashtags.keyword\",\"orderBy\":\"1\",\"order\":\"desc\",\"size\":100,\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\"},\"schema\":\"segment\"}],\"searchSource\":{\"index\":\"3291b9e0-bfcf-11ed-829d-f3ea157bcc91\",\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}}},\"enhancements\":{}}},{\"version\":\"8.0.0\",\"type\":\"search\",\"gridData\":{\"x\":0,\"y\":15,\"w\":48,\"h\":86,\"i\":\"f41ae42c-7dc1-4955-bdc0-8c4f6146d56e\"},\"panelIndex\":\"f41ae42c-7dc1-4955-bdc0-8c4f6146d56e\",\"embeddableConfig\":{\"enhancements\":{}},\"panelRefName\":\"panel_f41ae42c-7dc1-4955-bdc0-8c4f6146d56e\"}]",
+        "optionsJSON": "{\"useMargins\":true,\"syncColors\":false,\"hidePanelTitles\":false}",
+        "version": 1,
+        "timeRestore": false,
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[]}"
+        }
+      },
+      "references": [
+        {
+          "name": "6fde6ec2-0bd5-4a59-96e0-3b3e3c4095be:kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "3291b9e0-bfcf-11ed-829d-f3ea157bcc91"
+        },
+        {
+          "name": "ce02a1f2-732b-426f-bda8-cd8a0239047c:kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "3291b9e0-bfcf-11ed-829d-f3ea157bcc91"
+        },
+        {
+          "name": "f41ae42c-7dc1-4955-bdc0-8c4f6146d56e:panel_f41ae42c-7dc1-4955-bdc0-8c4f6146d56e",
+          "type": "search",
+          "id": "ba322f60-bfcf-11ed-829d-f3ea157bcc91"
+        }
+      ],
+      "migrationVersion": {
+        "dashboard": "8.0.0"
+      },
+      "coreMigrationVersion": "8.0.0"
+    },
+    {
+      "id": "3291b9e0-bfcf-11ed-829d-f3ea157bcc91",
+      "type": "index-pattern",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-03-11T05:42:06.278Z",
+      "version": "WzI1ODEsMl0=",
+      "attributes": {
+        "fieldAttrs": "{\"hashtags\":{\"count\":1},\"message\":{\"count\":1},\"user\":{\"count\":1},\"user_mentions.screen_name\":{\"count\":1}}",
+        "title": "twitter*",
+        "timeFieldName": "@timestamp",
+        "fields": "[]",
+        "typeMeta": "{}",
+        "runtimeFieldMap": "{}"
+      },
+      "references": [],
+      "migrationVersion": {
+        "index-pattern": "8.0.0"
+      },
+      "coreMigrationVersion": "8.0.0"
+    },
+    {
+      "id": "ba322f60-bfcf-11ed-829d-f3ea157bcc91",
+      "type": "search",
+      "namespaces": [
+        "default"
+      ],
+      "updated_at": "2023-03-11T05:44:02.134Z",
+      "version": "WzI1ODYsMl0=",
+      "attributes": {
+        "kibanaSavedObjectMeta": {
+          "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"kuery\"},\"filter\":[],\"indexRefName\":\"kibanaSavedObjectMeta.searchSourceJSON.index\"}"
+        },
+        "title": "Timeline",
+        "sort": [
+          [
+            "@timestamp",
+            "desc"
+          ]
+        ],
+        "columns": [
+          "user",
+          "user_mentions.screen_name",
+          "message",
+          "hashtags"
+        ],
+        "description": "",
+        "grid": {},
+        "hideChart": false
+      },
+      "references": [
+        {
+          "name": "kibanaSavedObjectMeta.searchSourceJSON.index",
+          "type": "index-pattern",
+          "id": "3291b9e0-bfcf-11ed-829d-f3ea157bcc91"
+        }
+      ],
+      "migrationVersion": {
+        "search": "8.0.0"
+      },
+      "coreMigrationVersion": "8.0.0"
+    }
+  ]
+}
