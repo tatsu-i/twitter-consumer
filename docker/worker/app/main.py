@@ -39,14 +39,17 @@ def tweet_aggs():
     response = s.execute()
 
     for urls in response.aggregations.urls.buckets:
-        if urls.doc_count > 5:
-            url = urls.key
-            status = get_title(url)
-            print(url, status)
-            if len(status) > 5:
-                status = f"{status}\n{url}"
-                api.update_status(status)
-                break
+        try:
+            if urls.doc_count > 5:
+                url = urls.key
+                status = get_title(url)
+                print(url, status)
+                if len(status) > 5:
+                    status = f"{status}\n{url}"
+                    api.update_status(status)
+                    break
+        except Exception as e:
+            print(e)
 
 
 tweet_aggs()

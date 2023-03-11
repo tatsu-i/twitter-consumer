@@ -3,8 +3,7 @@
 ## generate logstash config
 
 ```bash
-$ pip install tweepy --upgrade
-$ python generate.py > logstash/logstash.conf
+$ docker-compose run --entrypoint python worker /app/generate.py > docker/logstash/logstash.conf
 ```
 
 ## build and run
