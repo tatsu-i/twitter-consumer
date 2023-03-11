@@ -1,0 +1,8 @@
+click
+requests
+tiktoken
+langchain
+openai
+faiss-cpu
+elasticsearch
+elasticsearch-dsl
